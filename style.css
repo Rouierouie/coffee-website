@@ -48,16 +48,15 @@ header {
 
 /* ===== ナビゲーション ===== */
 nav {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: rgba(0,0,0,0.5);
+    position: absolute; /* ヘッダー内に固定 */
+    top: 20px;           /* ヘッダー上から20px下に配置 */
+    right: 30px;         /* ヘッダー右端から30px内側に配置 */
+    background: none;    /* 背景色なし */
 }
 
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
+    display: flex;       /* 横並びにする */
     padding: 0;
     margin: 0;
 }
@@ -70,7 +69,7 @@ nav a {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    padding: 15px 0;
+    padding: 5px 10px;
     display: block;
 }
 
