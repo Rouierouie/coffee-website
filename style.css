@@ -22,7 +22,7 @@ header {
     display: block;
 }
 
-/* ヘッダー中央テキスト */
+/* ===== ヘッダー中央テキスト ===== */
 .header-overlay {
     position: absolute;
     top: 50%;
@@ -31,6 +31,7 @@ header {
     text-align: center;
     color: white;
     text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    padding: 0 10px;
 }
 
 .header-overlay h1 {
@@ -48,15 +49,16 @@ header {
 
 /* ===== ナビゲーション ===== */
 nav {
-    position: absolute; /* ヘッダー内に固定 */
-    top: 20px;           /* ヘッダー上から20px下に配置 */
-    right: 30px;         /* ヘッダー右端から30px内側に配置 */
-    background: none;    /* 背景色なし */
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: none;
+    z-index: 10;
 }
 
 nav ul {
     list-style: none;
-    display: flex;       /* 横並びにする */
+    display: flex;
     padding: 0;
     margin: 0;
 }
@@ -118,7 +120,25 @@ footer {
 }
 
 /* ===== レスポンシブ対応 ===== */
+@media (max-width: 1024px) {
+    header {
+        height: 350px;
+    }
+
+    .header-overlay h1 {
+        font-size: 2.5rem;
+    }
+
+    .header-overlay p {
+        font-size: 1.3rem;
+    }
+}
+
 @media (max-width: 768px) {
+    header {
+        height: 300px;
+    }
+
     .header-overlay h1 {
         font-size: 2rem;
     }
@@ -127,16 +147,50 @@ footer {
         font-size: 1.1rem;
     }
 
+    nav {
+        top: 10px;
+        right: 10px;
+    }
+
     nav ul {
         flex-direction: column;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        border-radius: 5px;
     }
 
     nav li {
-        margin: 10px 0;
+        margin: 8px 0;
     }
 
     .section {
         padding: 30px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: 250px;
+    }
+
+    .header-overlay h1 {
+        font-size: 1.6rem;
+    }
+
+    .header-overlay p {
+        font-size: 1rem;
+    }
+
+    nav ul {
+        padding: 5px;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    .section {
+        padding: 20px 10px;
     }
 }
 
