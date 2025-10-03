@@ -10,30 +10,48 @@ body {
 /* ===== ヘッダー ===== */
 header {
     position: relative;
-    text-align: center;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
 }
 
 .header-photo {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
 }
 
-.logo {
+/* ヘッダー中央テキスト */
+.header-overlay {
     position: absolute;
-    bottom: 20px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    font-size: 2rem;
+    transform: translate(-50%, -50%);
+    text-align: center;
     color: white;
-    background-color: rgba(0, 0, 0, 0.4);
-    padding: 10px 20px;
-    border-radius: 8px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
+.header-overlay h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.header-overlay p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* ===== ナビゲーション ===== */
 nav {
-    background-color: #fff;
-    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.5);
 }
 
 nav ul {
@@ -50,39 +68,14 @@ nav li {
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: white;
     font-weight: bold;
     padding: 15px 0;
     display: block;
 }
 
 nav a:hover {
-    color: #d2691e;
-}
-
-/* ===== トップバナー ===== */
-.top-banner {
-    position: relative;
-    background: url('image/top.png') center/cover no-repeat;
-    height: 300px;
-}
-
-.top-banner .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.top-banner h2 {
-    color: white;
-    font-size: 2rem;
-    text-align: center;
+    color: #ffd700;
 }
 
 /* ===== 各セクション ===== */
@@ -127,21 +120,20 @@ footer {
 
 /* ===== レスポンシブ対応 ===== */
 @media (max-width: 768px) {
+    .header-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .header-overlay p {
+        font-size: 1.1rem;
+    }
+
     nav ul {
         flex-direction: column;
     }
 
     nav li {
         margin: 10px 0;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        padding: 8px 16px;
-    }
-
-    .top-banner {
-        height: 200px;
     }
 
     .section {
